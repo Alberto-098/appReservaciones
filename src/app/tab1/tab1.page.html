@@ -1,86 +1,92 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header class="ion-no-border">
+  <ion-toolbar color="danger" no-border>
 
     <ion-title>
-
-      <ion-menu side="start" menuId="first" contentId="main">
-        <ion-header>
-          <ion-toolbar color="primary">
-            <ion-title>Start Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <ion-list>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
-
-      <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
-        <ion-header>
-          <ion-toolbar color="tertiary">
-            <ion-title>Custom Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <ion-list>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
-
-      <ion-menu side="end" type="push" contentId="main">
-        <ion-header>
-          <ion-toolbar color="danger">
-            <ion-title>End Menu</ion-title>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content>
-          <ion-list>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-            <ion-item>Menu Item</ion-item>
-          </ion-list>
-        </ion-content>
-      </ion-menu>
-
-      <ion-router-outlet id="main"></ion-router-outlet>
-
+      <h3>Vibez4U</h3>
     </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <img src="../../assets/user.png">
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Vuelos</ion-title>
 
-    </ion-toolbar>
-  </ion-header>
+  <div class="banner">
 
-  <!--ion-icon name="airplane-outline"></ion-icon>
-  <ion-title size="large">Vuelos</ion-title-->
+    <img src="../../assets/banner.svg" />
 
-    <ion-content class="ion-padding">
-      <ion-button expand="block" onclick="openMenu()">Open Menu</ion-button>
-    </ion-content>
+    <div class="caption ion-padding">
+      The Best <br>
+      Booking App..!!
+    </div>
 
-  <app-explore-container name="Vuelos"></app-explore-container>
+    <!-- <div class="search">
+      <ion-item lines="none" class="ion-no-padding">
+        <ion-icon slot="start" name="search-outline"></ion-icon>
+        <ion-input placeholder="Search events"></ion-input>
+        <ion-button slot='end'>
+          <img src="../../assets/filter.svg" />
+        </ion-button>
+      </ion-item>
+    </div> -->
+
+  </div>
+
+  <div class="title">
+    <h2>List of Rooms</h2>
+
+    <p>See all</p>
+  </div>
+
+  <!-- <div class="event-slider">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding"> -->
+
+      <!-- <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/event1.svg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">17th July, 2021</p>
+              <h2 class="eventname">International Jazz Festival</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+
+                </div>
+
+                <p class="time">10:00pm</p>
+              </div>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide> -->
+
+    <!-- </ion-slides>
+  </div> -->
+
+
+
+        <ion-card>
+          <img src="../../assets/events/Hotel1.jpg" />
+          <ion-card-header>
+            <ion-card-subtitle>Destination</ion-card-subtitle>
+            <ion-card-title>Madison, WI</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
+          </ion-card-content>
+        </ion-card>
+
 </ion-content>
-
-    <script>
-  async function openMenu() {​​​
-  await menuController.open();
-} ​​​
-</script>
 

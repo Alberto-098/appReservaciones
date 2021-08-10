@@ -1,17 +1,100 @@
-<ion-header [translucent]="true">
+<ion-header translucent>
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-searchbar></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <div class="title">
+    <h2>List of Rooms</h2>
+  </div>
+
+  <div class="event-slider">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+
+      <!-- Slide I -->
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/event1.svg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">17th July, 2021</p>
+              <h2 class="eventname">International Jazz Festival</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
+
+              <div class="additional-info">
+                <p class="time">10:00pm</p>
+              </div>
+
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <!-- Slide II -->
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/event2.svg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">17th July, 2021</p>
+              <h2 class="eventname">International Jazz Festival</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+
+                </div>
+
+                <p class="time">10:00pm</p>
+              </div>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <!-- Slide III -->
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/Hotel1.jpg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <p class="date">17th July, 2021</p>
+              <h2 class="eventname">International Jazz Festival</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
+
+              <div class="additional-info">
+                <div class="attendees">
+
+                </div>
+
+                <p class="time">10:00pm</p>
+              </div>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+
 </ion-content>
