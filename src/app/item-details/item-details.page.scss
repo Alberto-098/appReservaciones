@@ -2,8 +2,8 @@
   margin-left: 15px;
 }
 
-.notification {
-  margin-right: 15px;
+.button-native {
+  margin-left: 20px;
 }
 
 ion-content {
@@ -11,84 +11,95 @@ ion-content {
   --padding-bottom: 16px;
   --padding-start: 26px;
   --padding-end: 26px;
-}
 
-.item-name {
-  color: #2a2a2a;
-}
-
-.price {
-  color: var(--ion-color-primary);
-
-  span {
-      color: #2a2a2a;
-      text-decoration: line-through;
-      margin-left: 20px;
-      font-size: medium;
-      vertical-align: top;
-  }
-}
-
-.seperator {
-  hr {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      background: #e2e2e2;
-  }
-}
-
-.review {
-  margin-top: 16px;
-  color: #2a2a2a;
-
-  .rating {
-      display: inline-block;
-      color: #ffffff;
-      background: var(--ion-color-primary);
-      padding: 10px 20px 10px 20px;
-      border-radius: 5px;
-      margin-right: 10px;
+  .item-name {
+    color: #2a2a2a;
   }
 
-  .count {
-      height: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      color: var(--ion-color-primary);
-  }
-}
-
-.description {
-  h5 {
-      color: #2a2a2a;
-      padding-top: 10px;
+  .seperator {
+    hr {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background: #e2e2e2;
+    }
   }
 
-  p {
-      color: #656565;
+  .review {
+    margin-top: 16px;
+    color: #2a2a2a;
+
+    .rating {
+        display: inline-block;
+        color: #ffffff;
+        background: var(--ion-color-primary);
+        padding: 4px 20px 5px 18px;
+        // padding: 4px 9px 4px 8px;
+        border-radius: 5px;
+    }
+
+    .count {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: var(--ion-color-primary);
+    }
   }
+
+  .description {
+    h5 {
+        color: #bf9555;
+        padding-top: 10px;
+    }
+
+    p {
+        color: #656565;
+        text-align: justify;
+    }
+  }
+
+  .dates {
+
+    h4 {
+      color: #a77cec;
+    }
+
+  }
+
 }
 
 ion-footer {
+
   ion-row {
       padding: 0;
+      margin-top: -4px;
+      background-color: #656565e0;
 
       ion-col {
-          padding: 0;
 
-          ion-button {
-              margin: 0;
-              height: 50px;
-              font-size: 18px;
-              box-shadow: none;
-          }
-      }
+        ion-button {
+            height: 50px;
+            font-size: 15px;
+            box-shadow: none;
+            margin-top: 9px;
+            margin-left: 15px;
+            --background: #f59d3f;
+        }
+
+        h2 {
+          text-align: center;
+          margin-top: 6px;
+          color: white;
+        } 
+  
+        .price{
+          margin-top: -24px;
+          text-align: center;
+          margin-bottom: auto;
+          color: #beef5f;
+        }
+    }
   }
 }
 
-// This will remove footer shadow on android
-.footer-md::before {
-  background-image: none !important;
-}

@@ -2,10 +2,6 @@
   margin-left: 15px;
 }
 
-.notification {
-  margin-right: 15px;
-}
-
 ion-content {
   --padding-top: 16px;
   --padding-bottom: 16px;
@@ -28,10 +24,6 @@ ion-content {
       ion-label {
           color: #919191;
           font-size: larger;
-      }
-
-      ion-input {
-          --color: #434343;
       }
   }
 }

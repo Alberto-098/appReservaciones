@@ -1,15 +1,9 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar color="danger" no-border>
+  <ion-toolbar >
 
     <ion-title>
-      <h3>Vibez4U</h3>
+      <img src="../../assets/logos/logo1.PNG" alt="">
     </ion-title>
-
-    <ion-buttons slot="end">
-      <ion-button>
-        <img src="../../assets/user.png">
-      </ion-button>
-    </ion-buttons>
 
   </ion-toolbar>
 </ion-header>
@@ -18,74 +12,53 @@
 
   <div class="banner">
 
-    <img src="../../assets/banner.svg" />
+    <img id="menu-img" src="../../assets/banners/best5a.png" />
 
     <div class="caption ion-padding">
-      The Best <br>
-      Booking App..!!
+      The Best Booking App
     </div>
-
-    <!-- <div class="search">
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-icon slot="start" name="search-outline"></ion-icon>
-        <ion-input placeholder="Search events"></ion-input>
-        <ion-button slot='end'>
-          <img src="../../assets/filter.svg" />
-        </ion-button>
-      </ion-item>
-    </div> -->
 
   </div>
 
   <div class="title">
     <h2>List of Rooms</h2>
-
-    <p>See all</p>
   </div>
-
-  <!-- <div class="event-slider">
-    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding"> -->
-
-      <!-- <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
-
-            <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event1.svg" />
-            </ion-card-header>
-
-            <ion-card-content>
-              <p class="date">17th July, 2021</p>
-              <h2 class="eventname">International Jazz Festival</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
-
-              <div class="additional-info">
-                <div class="attendees">
-
-                </div>
-
-                <p class="time">10:00pm</p>
-              </div>
-            </ion-card-content>
-
-          </ion-card>
-        </ion-col>
-      </ion-slide> -->
-
-    <!-- </ion-slides>
-  </div> -->
-
-
 
         <ion-card>
           <img src="../../assets/events/Hotel1.jpg" />
           <ion-card-header>
-            <ion-card-subtitle>Destination</ion-card-subtitle>
-            <ion-card-title>Madison, WI</ion-card-title>
+
+              <ion-row>
+                <ion-col size="8">
+                  <div class="location"><ion-icon name="location"></ion-icon>Guanacaste, Costa Rica</div>
+                </ion-col>
+                <ion-col size="4">
+                  <div class="price">$500/Night</div>
+                </ion-col>
+              </ion-row>
+
+          <ion-card-title>Hotel Los Sueños</ion-card-title>
+
           </ion-card-header>
-          <ion-card-content>
-            Founded in 1829 on an isthmus between Lake Monona and Lake Mendota, Madison was named the capital of the Wisconsin Territory in 1836.
-          </ion-card-content>
+
+            <ion-card-content>
+              A perfect room, if you want to stay close to the beach and have a great vacation.
+                <br>
+              <ion-row>
+                <ion-col>
+                  <div><ion-icon name="people-outline"></ion-icon> 4 Persons</div>
+                </ion-col>
+                <ion-col>
+                  <div><ion-icon name="bed-outline"></ion-icon> 2 Rooms</div>
+                </ion-col>
+              </ion-row>
+
+              <ion-col>
+                <ion-button expand="block" routerLink="/item-details">View</ion-button>
+              </ion-col>
+
+            </ion-card-content>
+        
         </ion-card>
 
 </ion-content>

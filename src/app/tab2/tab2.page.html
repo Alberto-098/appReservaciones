@@ -1,13 +1,36 @@
 <ion-header translucent>
   <ion-toolbar>
+    
+    <br>
     <ion-searchbar></ion-searchbar>
+    
+    <!-- Start Date -->
+
+    <ion-item> 
+      <ion-label position="floating">Start date</ion-label> 
+      <ion-datetime displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <!-- End Date -->
+
+    <ion-item> 
+      <ion-label position="floating">End date</ion-label> 
+      <ion-datetime displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
+      <ion-icon name="calendar-outline" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-col size="6">
+      <ion-button expand="full">Search</ion-button>
+    </ion-col>
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
   <div class="title">
-    <h2>List of Rooms</h2>
+    <h2>Search for...</h2>
   </div>
 
   <div class="event-slider">
@@ -20,19 +43,20 @@
           <ion-card>
 
             <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event1.svg" />
+              <img src="../../assets/events/Hotel1.jpg" />
             </ion-card-header>
 
             <ion-card-content>
-              <p class="date">17th July, 2021</p>
-              <h2 class="eventname">International Jazz Festival</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
-
+              <h2 class="eventname">Hotel FiveStars</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Limon, Costa Rica</p>
               <div class="additional-info">
-                <p class="time">10:00pm</p>
+                <p class="price">$250 / Noche</p>
               </div>
-
             </ion-card-content>
+
+            <ion-col>
+              <ion-button expand="block" routerLink="/item-details">View</ion-button>
+            </ion-col>
 
           </ion-card>
         </ion-col>
@@ -45,30 +69,28 @@
           <ion-card>
 
             <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/event2.svg" />
+              <img src="../../assets/events/Hotel1.jpg" />
             </ion-card-header>
 
             <ion-card-content>
-              <p class="date">17th July, 2021</p>
-              <h2 class="eventname">International Jazz Festival</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
-
+              <h2 class="eventname">Hotel FiveStars</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Limon, Costa Rica</p>
               <div class="additional-info">
-                <div class="attendees">
-
-                </div>
-
-                <p class="time">10:00pm</p>
+                <p class="price">$250 / Noche</p>
               </div>
             </ion-card-content>
+
+            <ion-col>
+              <ion-button expand="block" routerLink="/item-details">View</ion-button>
+            </ion-col>
 
           </ion-card>
         </ion-col>
       </ion-slide>
 
-      <!-- Slide III -->
+       <!-- Slide III -->
 
-      <ion-slide>
+       <ion-slide>
         <ion-col class="ion-text-left">
           <ion-card>
 
@@ -77,18 +99,16 @@
             </ion-card-header>
 
             <ion-card-content>
-              <p class="date">17th July, 2021</p>
-              <h2 class="eventname">International Jazz Festival</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Caracas, Venezuela</p>
-
+              <h2 class="eventname">Hotel FiveStars</h2>
+              <p class="location"><ion-icon name="location"></ion-icon>Limon, Costa Rica</p>
               <div class="additional-info">
-                <div class="attendees">
-
-                </div>
-
-                <p class="time">10:00pm</p>
+                <p class="price">$250 / Noche</p>
               </div>
             </ion-card-content>
+
+            <ion-col>
+              <ion-button expand="block" routerLink="/item-details">View</ion-button>
+            </ion-col>
 
           </ion-card>
         </ion-col>

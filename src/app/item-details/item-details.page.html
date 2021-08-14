@@ -2,7 +2,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-button color="primary" class="backbtn" routerLink="/home" routerDirection="back">
+      <ion-button color="primary" class="backbtn" routerLink="../tabs/tab1" routerDirection="back">
         <img src="../../assets/back-dark.svg" />
       </ion-button>
     </ion-buttons>
@@ -26,10 +26,6 @@
 
   <div class="ion-padding-vertical">
     <h1 class="item-name">Hotel Marriott</h1>
-
-    <h4 class="price">
-      $42
-    </h4>
   </div>
 
   <div class="seperator">
@@ -38,16 +34,21 @@
 
   <div class="review">
     <ion-row>
+
       <ion-col size="6">
         <div class="rating">
-          4.5
+          <ion-icon name="person-outline"></ion-icon>
         </div>
+        4 persons
+      </ion-col>
 
-        Very Good
-      </ion-col>
       <ion-col size="6">
-        <div class="count">49 Reviews</div>
+        <div class="rating">
+          <ion-icon name="home-outline"></ion-icon>
+        </div>
+        2 rooms
       </ion-col>
+      
     </ion-row>
   </div>
 
@@ -57,26 +58,64 @@
 
   <div class="description">
     <h5>Description</h5>
-
     <p>
-      4 personas - 2 habitaciones
+    Opulent, seductive and lush, Casa Gandhi delivers the ultimate in luxury, privacy and romance. This new listing is an architectural masterpiece ocean view estate property nestled in the rain forest.
     </p>
-
   </div>
 
   <div class="seperator">
     <hr>
   </div>
 
+  <div class="dates">
+
+      <!-- Start Date -->
+
+      <ion-col>
+        <h4>Select Dates</h4>
+          <ion-item> 
+            <ion-label position="floating">Start date</ion-label> 
+            <ion-datetime displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          </ion-item>
+      </ion-col>
+
+      <!-- End Date -->
+
+      <ion-col>
+        <ion-item> 
+          <ion-label position="floating">End date</ion-label> 
+          <ion-datetime displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+        </ion-item>  
+      </ion-col>
+
+  </div>
+
 </ion-content>
 
 <ion-footer>
-  <ion-row>
-    <ion-col size="6">
-      <ion-button expand="full" color="light">Night / $500</ion-button>
-    </ion-col>
-    <ion-col size="6">
-      <ion-button expand="full">Reservar</ion-button>
-    </ion-col>
-  </ion-row>
+  <ion-toolbar>
+
+    <ion-row>
+
+      <ion-col size="6">
+        <h2>$100</h2>
+        <br>
+        <p class="price">$50 / Night</p>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-button class="reserve" routerLink="/checkout">
+          Reserve
+          <br>
+          01/08 - 01/08
+        </ion-button>
+        
+      </ion-col>
+
+    </ion-row>
+
+  </ion-toolbar>
 </ion-footer>
+

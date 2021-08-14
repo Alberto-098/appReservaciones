@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   }
 
   login() {
-    this.navCtrl.navigateRoot('/home', { animationDirection: 'forward' });
+    this.navCtrl.navigateRoot('/tabs', { animationDirection: 'forward' });
   }
 
 }

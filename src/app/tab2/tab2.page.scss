@@ -33,7 +33,7 @@ ion-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 42px 26px 16px 26px;
+    padding: 5px 26px 8px 26px;
 
     h2 {
       margin: 0;
@@ -74,11 +74,13 @@ ion-content {
           }
 
           ion-card-content {
-            padding-top: 13px;
+            // padding-top: 13px;
+            margin-top: none;
+            margin-bottom: -14px;
 
-            .date {
-              color: #364F6B;
-              font-size: 10px;
+            .price {
+              color: #e69419;
+              font-size: 15px;
               margin-bottom: 5px;
             }
 
