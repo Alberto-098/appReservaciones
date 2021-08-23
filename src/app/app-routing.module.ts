@@ -23,10 +23,6 @@ const routes: Routes = [
     loadChildren: () => import('./signup/signup.module').then( m => m.SignupPageModule)
   },
   {
-    path: 'item-details',
-    loadChildren: () => import('./item-details/item-details.module').then( m => m.ItemDetailsPageModule)
-  },
-  {
     path: 'checkout',
     loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
@@ -37,6 +33,14 @@ const routes: Routes = [
   {
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
+  },
+  {
+    path: 'search-details',
+    loadChildren: () => import('./search-details/search-details.module').then( m => m.SearchDetailsPageModule)
+  },
+  {
+    path: 'rooms-details',
+    loadChildren: () => import('./rooms-details/rooms-details.module').then( m => m.RoomsDetailsPageModule)
   },
 ];
 @NgModule({

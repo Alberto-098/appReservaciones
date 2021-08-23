@@ -19,13 +19,10 @@
     <ion-slide>
       <img src="../../assets/product-slider/prod-slide1.jpg" />
     </ion-slide>
-    <ion-slide>
-      <img src="../../assets/product-slider/prod-slide1.jpg" />
-    </ion-slide>
   </ion-slides>
 
   <div class="ion-padding-vertical">
-    <h1 class="item-name">Hotel Marriott</h1>
+    <h1 class="item-name">Room FiveStars</h1>
   </div>
 
   <div class="seperator">
@@ -35,18 +32,11 @@
   <div class="review">
     <ion-row>
 
-      <ion-col size="6">
+      <ion-col>
         <div class="rating">
           <ion-icon name="person-outline"></ion-icon>
         </div>
         4 persons
-      </ion-col>
-
-      <ion-col size="6">
-        <div class="rating">
-          <ion-icon name="home-outline"></ion-icon>
-        </div>
-        2 rooms
       </ion-col>
       
     </ion-row>
@@ -75,7 +65,7 @@
         <h4>Select Dates</h4>
           <ion-item> 
             <ion-label position="floating">Start date</ion-label> 
-            <ion-datetime displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
+            <ion-datetime #myStartPicker (ionChange)="updateMyStartDate(myStartPicker.value)" displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
             <ion-icon name="calendar-outline" slot="start"></ion-icon>
           </ion-item>
       </ion-col>
@@ -83,9 +73,9 @@
       <!-- End Date -->
 
       <ion-col>
-        <ion-item> 
+        <ion-item>
           <ion-label position="floating">End date</ion-label> 
-          <ion-datetime displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
+          <ion-datetime #myEndPicker (ionChange)="updateMyEndDate(myEndPicker.value)" displayFormat="DDD, MMM DD" value="2021-01-01T00:00:00.000Z" display-timezone="utc"></ion-datetime>
           <ion-icon name="calendar-outline" slot="start"></ion-icon>
         </ion-item>  
       </ion-col>
@@ -100,7 +90,8 @@
     <ion-row>
 
       <ion-col size="6">
-        <h2>$100</h2>
+        <h2>${{days}}</h2> 
+        <!--$100-->
         <br>
         <p class="price">$50 / Night</p>
       </ion-col>
@@ -109,7 +100,8 @@
         <ion-button class="reserve" routerLink="/checkout">
           Reserve
           <br>
-          01/08 - 01/08
+          {{startDateDay}} / {{startDateMonth}} - {{endDateDay}} / {{endDateMonth}}
+          <!-- 01/08 - 01/08 -->
         </ion-button>
         
       </ion-col>

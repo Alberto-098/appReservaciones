@@ -1,0 +1,54 @@
+<div class="ion-page">
+
+  <ion-header translucent>
+    <ion-toolbar>
+      <ion-title>Edit Room</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="dismiss()">Close</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <form [formGroup]="ionicForm" novalidate>
+      <ion-list >
+        <ion-item>
+          <ion-label position="floating">Name</ion-label>
+          <ion-input formControlName="name" required placeholder="Enter Name" ></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Description</ion-label>
+          <ion-input formControlName="description" placeholder="Enter Description"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Image</ion-label>
+          <ion-input formControlName="image" required placeholder="Enter image"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Price</ion-label>
+          <ion-input formControlName="pricePerNight" required type="number" min="0" placeholder="Enter Price per night"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Capacity</ion-label>
+          <ion-input formControlName="capacity" required type="number" min="0" placeholder="Enter Price"></ion-input>
+        </ion-item>
+        <ion-radio-group formControlName="status" required>
+          <ion-list-header>
+            <ion-label>
+              Status
+            </ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label>Active</ion-label>
+            <ion-radio slot="start" value="active"></ion-radio>
+            <ion-label>Inactive</ion-label>
+            <ion-radio slot="end" value="inactive"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </form>
+      <ion-button expand="block" (click)="updateRoom(roomKey)">
+        Update
+      </ion-button>
+  </ion-content>
+</div>

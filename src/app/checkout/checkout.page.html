@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-buttons class="backbtn" routerLink="/item-details" routerDirection="back">
+      <ion-buttons class="backbtn" routerLink="/rooms-details" routerDirection="back">
         <img src="../../assets/back-dark.svg" />
       </ion-buttons>
     </ion-buttons>
@@ -23,9 +23,9 @@
         </div>
 
         <div class="item-info">
-          <p>Hotel Marriott</p>
-          <p>Guanacaste, CR</p>
-          <p>$100</p>
+          <p>Room FiveStars</p>
+          <ion-icon name="person-circle-outline"></ion-icon>4 persons
+
         </div>
       </ion-card-content>
     </ion-card>
@@ -39,7 +39,7 @@
 
     <ion-item>
       <ion-label><ion-icon name="calendar-outline"></ion-icon> Dates</ion-label>
-      <ion-label slot="end" class="ion-text-right">01 Jan - 05 Jan </ion-label>
+      <ion-label slot="end" class="ion-text-right">01/01 - 01/05 </ion-label>
     </ion-item>
 
     <ion-item lines="none">
@@ -73,38 +73,6 @@
       <ion-label slot="end" class="ion-text-right">$750</ion-label>
     </ion-item>
   </div>
-
-         <!-- Payment -->
-
-         <div class="cart-total">
-          <h1>Payment Procedure</h1>
-      
-          <ion-list>
-    
-            <ion-item>
-              <ion-label position="floating">Cardholder's Name</ion-label>
-              <ion-input placeholder="Enter Name"><ion-icon name="person-circle-outline"></ion-icon></ion-input>
-            </ion-item>
-      
-            <ion-item>
-              <ion-label position="floating">Card Number</ion-label>
-              <ion-input type="number" placeholder="Enter Card Number"><ion-icon name="card-outline"></ion-icon></ion-input>
-            </ion-item>
-      
-            <ion-item>
-              <ion-label position="floating">Expiration Date</ion-label>
-              <ion-input placeholder="Enter the Date"><ion-icon name="calendar-number-outline"></ion-icon></ion-input>
-            </ion-item>
-    
-            <ion-item>
-              <ion-label position="floating">Card Security Code</ion-label>
-              <ion-input type="number" placeholder="Enter Security Code"><ion-icon name="lock-closed-outline"></ion-icon></ion-input>
-            </ion-item>
-      
-          </ion-list>
-      
-        </div>    
-
 </ion-content>
 
 <ion-footer translucent="true">
@@ -112,7 +80,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button expand="block" class="main-button" routerLink="/confirm" routerDirection="forward">Reservar</ion-button>
+        <ion-button expand="block" class="main-button" routerLink="/confirm" routerDirection="forward">Book</ion-button>
       </ion-col>
     </ion-row>
 

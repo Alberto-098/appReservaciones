@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button color="primary" class="backbtn" routerLink="../tabs/tab2" routerDirection="back">
+        <img src="../../assets/back-dark.svg" />
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides pager="true" class="product-slider">
+    <ion-slide>
+      <img src="../../assets/product-slider/prod-slide1.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/product-slider/prod-slide1.jpg" />
+    </ion-slide>
+    <ion-slide>
+      <img src="../../assets/product-slider/prod-slide1.jpg" />
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ion-padding-vertical">
+    <h1 class="item-name">Room FiveStars</h1>
+  </div>
+
+  <div class="seperator">
+    <hr>
+  </div>
+
+  <div class="review">
+    <ion-row>
+
+      <ion-col>
+        <div class="rating">
+          <ion-icon name="person-outline"></ion-icon>
+        </div>
+        4 persons
+      </ion-col>
+      
+    </ion-row>
+  </div>
+
+  <div class="seperator">
+    <hr>
+  </div>
+
+  <div class="description">
+    <h5>Description</h5>
+    <p>
+    Premium Room, this room is the best for have a great vacation and its close to the beach.
+    </p>
+  </div>
+
+  <div class="seperator">
+    <hr>
+  </div>
+
+  <div class="dates">
+
+      <!-- Start Date -->
+
+      <ion-col>
+        <h4>Selected Dates</h4>
+          <ion-item>   
+            <ion-label>Start date</ion-label> 
+            <ion-icon name="calendar-outline" slot="start"></ion-icon>
+            <!-- <p>{{startDateDay}} / {{startDateMonth}}</p> -->
+            <p>01/01</p>
+          </ion-item>
+      </ion-col>
+
+      <!-- End Date -->
+
+      <ion-col>
+        <ion-item>
+          <ion-label>End date</ion-label> 
+          <ion-icon name="calendar-outline" slot="start"></ion-icon>
+          <!-- <p>{{endDateDay}} / {{endDateMonth}}</p> -->
+          <p>01/05</p>
+        </ion-item>  
+      </ion-col>
+
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+
+    <ion-row>
+
+      <ion-col size="6">
+        <h2>$200</h2> 
+        <!-- <h2>${{days}}</h2>  -->
+        <br>
+        <p class="price">$50 / Night</p>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-button class="reserve" routerLink="/checkout">
+          Reserve
+          <br>
+          01/01 - 01/05
+          <!-- {{startDateDay}} / {{startDateMonth}} - {{endDateDay}} / {{endDateMonth}} -->
+        </ion-button>
+        
+      </ion-col>
+
+    </ion-row>
+
+  </ion-toolbar>
+</ion-footer>

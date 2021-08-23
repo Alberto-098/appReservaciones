@@ -21,11 +21,12 @@
     </ion-item>
 
     <ion-col size="6">
-      <ion-button expand="full">Search</ion-button>
+      <ion-button expand="full">Book</ion-button>
     </ion-col>
 
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content [fullscreen]="true">
 
@@ -33,88 +34,39 @@
     <h2>Search for...</h2>
   </div>
 
-  <div class="event-slider">
-    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+  <div class="order-items">
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src='https://www.travelplusstyle.com/wp-content/uploads/2016/01/sonevajani-1880.jpg' />
+        </div>
 
-      <!-- Slide I -->
+        <div class="item-info">
+          <p>Los Sueños Room</p>
+          <p>$340</p>
+          
+          <ion-button expand="block" class="main-button" routerLink="/search-details">View</ion-button>
+        </div>
 
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
+      </ion-card-content>
+    </ion-card>
 
-            <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/Hotel1.jpg" />
-            </ion-card-header>
+    <ion-card mode="ios">
+      <ion-card-content>
+        <div class="item-img">
+          <img src='../../assets/events/Hotel1.jpg' />
+        </div>
 
-            <ion-card-content>
-              <h2 class="eventname">Hotel FiveStars</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Limon, Costa Rica</p>
-              <div class="additional-info">
-                <p class="price">$250 / Noche</p>
-              </div>
-            </ion-card-content>
+        <div class="item-info">
+          <p>Marriott Room</p>
+          <p>$540</p>
+          
+          <ion-button expand="block" class="main-button" routerLink="/search-details">View</ion-button>
+        </div>
 
-            <ion-col>
-              <ion-button expand="block" routerLink="/item-details">View</ion-button>
-            </ion-col>
+      </ion-card-content>
+    </ion-card>
 
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-
-      <!-- Slide II -->
-
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
-
-            <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/Hotel1.jpg" />
-            </ion-card-header>
-
-            <ion-card-content>
-              <h2 class="eventname">Hotel FiveStars</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Limon, Costa Rica</p>
-              <div class="additional-info">
-                <p class="price">$250 / Noche</p>
-              </div>
-            </ion-card-content>
-
-            <ion-col>
-              <ion-button expand="block" routerLink="/item-details">View</ion-button>
-            </ion-col>
-
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-
-       <!-- Slide III -->
-
-       <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
-
-            <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/Hotel1.jpg" />
-            </ion-card-header>
-
-            <ion-card-content>
-              <h2 class="eventname">Hotel FiveStars</h2>
-              <p class="location"><ion-icon name="location"></ion-icon>Limon, Costa Rica</p>
-              <div class="additional-info">
-                <p class="price">$250 / Noche</p>
-              </div>
-            </ion-card-content>
-
-            <ion-col>
-              <ion-button expand="block" routerLink="/item-details">View</ion-button>
-            </ion-col>
-
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-
-    </ion-slides>
   </div>
 
 </ion-content>

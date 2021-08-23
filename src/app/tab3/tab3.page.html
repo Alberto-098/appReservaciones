@@ -10,9 +10,86 @@
 
 <ion-content>
 
-  <h1 class="title">My Reserves</h1>
+  <h1 class="title">My Bookings</h1>
 
-  <div class="order-items">
+  <div class="event-slider">
+    <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
+
+      <!-- Slide I -->
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/Hotel1.jpg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <h2 class="eventname">FiveStars Room</h2>
+               <p class="date">01/01 - 01/05</p> 
+              <div class="additional-info">
+                <p class="price">$250</p>
+              </div>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <!-- Slide II -->
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="https://www.travelplusstyle.com/wp-content/uploads/2016/01/sonevajani-1880.jpg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <h2 class="eventname">Papagayo Room</h2>
+              <p class="date">01/01 - 01/05</p> 
+              <div class="additional-info">
+                <p class="price">$120</p>
+              </div>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+      <!-- Slide II -->
+
+      <ion-slide>
+        <ion-col class="ion-text-left">
+          <ion-card>
+
+            <ion-card-header class="ion-no-padding">
+              <img src="../../assets/events/Hotel1.jpg" />
+            </ion-card-header>
+
+            <ion-card-content>
+              <h2 class="eventname">Marriott Room</h2>
+              <p class="date">01/01 - 01/05</p> 
+              <div class="additional-info">
+                <p class="price">$180</p>
+              </div>
+            </ion-card-content>
+
+          </ion-card>
+        </ion-col>
+      </ion-slide>
+
+    </ion-slides>
+  </div>
+
+
+
+
+
+
+  <!-- <div class="order-items">
     <ion-card mode="ios">
       <ion-card-content>
         <div class="item-img">
@@ -21,12 +98,13 @@
 
         <div class="item-info">
           <p>Habitacion Privada</p>
-          <p>Quepos, Puntarenas</p>
           <p>$34.00</p>
+          <p>01/01 - 01/05</p>
         </div>
 
       </ion-card-content>
     </ion-card>
+
     <ion-card mode="ios">
       <ion-card-content>
         <div class="item-img">
@@ -35,29 +113,13 @@
 
         <div class="item-info">
           <p>Habitacion Deluxe</p>
-          <p>La Fortuna, San Carlos</p>
           <p>$150.00</p>
+          <p>01/01 - 01/12</p>
         </div>
         
       </ion-card-content>
     </ion-card>
-    <ion-card mode="ios">
 
-      <ion-card-content>
-
-        <div class="item-img">
-          <img src='../../assets/events/Hotel1.jpg' />
-        </div>
-
-        <div class="item-info">
-          <p>Habitacion Doble</p>
-          <p>Monte Verde</p>
-          <p>$250.00</p>
-        </div>
-
-      </ion-card-content>
-
-    </ion-card>
-  </div>
+  </div> -->
 
 </ion-content>
