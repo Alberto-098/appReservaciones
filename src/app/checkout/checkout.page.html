@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-buttons class="backbtn" routerLink="/home" routerDirection="back">
+      <ion-buttons class="backbtn" routerLink="/rooms-details" routerDirection="back">
         <img src="../../assets/back-dark.svg" />
       </ion-buttons>
     </ion-buttons>
@@ -12,47 +12,77 @@
 
   <h1 class="title">Checkout</h1>
 
+  <!-- Booking Description -->
+
   <div class="cart-items">
 
     <ion-card mode="ios">
       <ion-card-content>
         <div class="item-img">
-          <img src="../../assets/cart/cart1.png" />
+          <img src="../../assets/events/Hotel1.jpg" />
         </div>
 
         <div class="item-info">
-          <p>Women t-shirt</p>
-          <p>Lotto.LTD</p>
-          <p>$34.00</p>
+          <p>Room FiveStars</p>
+          <ion-icon name="person-circle-outline"></ion-icon>4 persons
+
         </div>
       </ion-card-content>
     </ion-card>
 
   </div>
 
+  <!-- Range of Days -->
+
   <div class="cart-total">
+    <h1>Your Reserve</h1>
+
+    <ion-item>
+      <ion-label><ion-icon name="calendar-outline"></ion-icon> Dates</ion-label>
+      <ion-label slot="end" class="ion-text-right">01/01 - 01/05 </ion-label>
+    </ion-item>
+
     <ion-item lines="none">
-      <ion-label>Sub Total</ion-label>
-      <ion-label slot="end" class="ion-text-right">$160.00</ion-label>
+      <ion-label><ion-icon name="moon-outline"></ion-icon> Total Nights</ion-label>
+      <ion-label slot="end" class="ion-text-right">5 Nights</ion-label>
+    </ion-item>
+
+  </div>
+
+  <!-- Price Detail -->
+
+  <div class="cart-total">
+    <h1>Price Details</h1>
+    <ion-item lines="none">
+      <ion-label>$100 x 5 Night</ion-label>
     </ion-item>
     <ion-item lines="none">
-      <ion-label>Discount</ion-label>
-      <ion-label slot="end" class="ion-text-right">5%</ion-label>
+      <ion-label>Subtotal</ion-label>
+      <ion-label slot="end" class="ion-text-right">$500</ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Commission</ion-label>
+      <ion-label slot="end" class="ion-text-right">$150</ion-label>
     </ion-item>
     <ion-item>
-      <ion-label>Shipping</ion-label>
-      <ion-label slot="end" class="ion-text-right">$10.00</ion-label>
+      <ion-label>Tax & Fee</ion-label>
+      <ion-label slot="end" class="ion-text-right">$100</ion-label>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Total</ion-label>
-      <ion-label slot="end" class="ion-text-right">$162.00</ion-label>
+      <ion-label slot="end" class="ion-text-right">$750</ion-label>
     </ion-item>
   </div>
-
 </ion-content>
 
-<ion-footer translucent="true" class="ion-no-border" mode="md">
-  <ion-toolbar color="translucent">
-    <ion-button expand="block" class="main-button" routerLink="/confirm" routerDirection="forward">Reservar</ion-button>
+<ion-footer translucent="true">
+  <ion-toolbar>
+
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" class="main-button" routerLink="/confirm" routerDirection="forward">Book</ion-button>
+      </ion-col>
+    </ion-row>
+
   </ion-toolbar>
 </ion-footer>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPage implements OnInit {
 
-  constructor() { }
+   constructor() { }
 
   ngOnInit() {
   }
