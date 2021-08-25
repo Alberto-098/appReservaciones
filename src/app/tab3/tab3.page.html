@@ -17,63 +17,19 @@
 
       <!-- Slide I -->
 
-      <ion-slide>
+      <ion-slide *ngFor="let reservation of reservations">
         <ion-col class="ion-text-left">
           <ion-card>
 
             <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/Hotel1.jpg" />
+              <img src="{{reservation.image}}" />
             </ion-card-header>
 
             <ion-card-content>
-              <h2 class="eventname">FiveStars Room</h2>
-               <p class="date">01/01 - 01/05</p> 
+              <h2 class="eventname">{{reservation.hotelName}}</h2>
+               <p class="date">{{reservation.startDate | date}} - {{reservation.endDate | date}}</p> 
               <div class="additional-info">
-                <p class="price">$250</p>
-              </div>
-            </ion-card-content>
-
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-
-      <!-- Slide II -->
-
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
-
-            <ion-card-header class="ion-no-padding">
-              <img src="https://www.travelplusstyle.com/wp-content/uploads/2016/01/sonevajani-1880.jpg" />
-            </ion-card-header>
-
-            <ion-card-content>
-              <h2 class="eventname">Papagayo Room</h2>
-              <p class="date">01/01 - 01/05</p> 
-              <div class="additional-info">
-                <p class="price">$120</p>
-              </div>
-            </ion-card-content>
-
-          </ion-card>
-        </ion-col>
-      </ion-slide>
-
-      <!-- Slide II -->
-
-      <ion-slide>
-        <ion-col class="ion-text-left">
-          <ion-card>
-
-            <ion-card-header class="ion-no-padding">
-              <img src="../../assets/events/Hotel1.jpg" />
-            </ion-card-header>
-
-            <ion-card-content>
-              <h2 class="eventname">Marriott Room</h2>
-              <p class="date">01/01 - 01/05</p> 
-              <div class="additional-info">
-                <p class="price">$180</p>
+                <p class="price">${{ reservation.pricePerNight * reservation.totalOfNights}}</p>
               </div>
             </ion-card-content>
 
@@ -83,43 +39,5 @@
 
     </ion-slides>
   </div>
-
-
-
-
-
-
-  <!-- <div class="order-items">
-    <ion-card mode="ios">
-      <ion-card-content>
-        <div class="item-img">
-          <img src='../../assets/events/Hotel1.jpg' />
-        </div>
-
-        <div class="item-info">
-          <p>Habitacion Privada</p>
-          <p>$34.00</p>
-          <p>01/01 - 01/05</p>
-        </div>
-
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card mode="ios">
-      <ion-card-content>
-        <div class="item-img">
-          <img src='../../assets/events/Hotel1.jpg' />
-        </div>
-
-        <div class="item-info">
-          <p>Habitacion Deluxe</p>
-          <p>$150.00</p>
-          <p>01/01 - 01/12</p>
-        </div>
-        
-      </ion-card-content>
-    </ion-card>
-
-  </div> -->
 
 </ion-content>

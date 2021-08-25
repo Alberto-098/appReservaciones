@@ -14,6 +14,10 @@ export class LoginService {
       return false;
     }
   }
+
+  getLoggedUser(){
+    return sessionStorage.getItem('userid');
+  }
 }
 
 

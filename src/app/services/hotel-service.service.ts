@@ -14,6 +14,10 @@ export class HotelService {
     return this.db.list('hotels/'+id).snapshotChanges();
   }
 
+  getHotelByKey(key: any){
+    return this.db.list('hotels/'+key).valueChanges();
+  }
+
   addRoom(newRoom){
     this.db.list(`hotels`).push(newRoom);
   }
@@ -32,6 +36,10 @@ export class HotelService {
 
   login(username){
     return this.db.list('users', ref => ref.orderByChild('email').equalTo(username)).valueChanges();
+  }
+
+  getReservationsByUser(userid){
+    return this.db.list('reservations', ref => ref.orderByChild('userid').equalTo(userid)).valueChanges();
   }
 }
 
