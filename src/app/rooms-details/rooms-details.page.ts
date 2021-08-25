@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { mergeMap } from 'rxjs/operators';
+import { hotel } from '../models/hotel.model';
+import { HotelService } from '../services/hotel-service.service';
+
 
 @Component({
   selector: 'app-rooms-details',
@@ -19,11 +24,30 @@ export class RoomsDetailsPage implements OnInit {
     days: any = 0;
     day1: any = new Date();
     day2: any = new Date();
+
+    id: Number;
+    hotel : hotel = {
+      id: null,
+      capacity: 0,
+      description: '',
+      image: '',
+      isActive: false,
+      name: '',
+      pricePerNight: 0
+    };
   
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private hotelService: HotelService) { }
 
   ngOnInit() {
+
+    this.route.params.pipe(
+      mergeMap(params => this.hotelService.getHotel(params.id) )
+    ).subscribe( (hotelSnapshot) =>{
+      hotelSnapshot.forEach((properties) => {
+        this.hotel[JSON.parse(JSON.stringify(properties.key))] = JSON.parse(JSON.stringify(properties.payload));
+      });
+    });
   } 
 
   //Actualizacion de Fechas

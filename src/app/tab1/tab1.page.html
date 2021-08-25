@@ -24,71 +24,40 @@
     <h2>List of Rooms</h2>
   </div>
 
-        <ion-card>
-          <img src="../../assets/events/Hotel1.jpg" />
-          <ion-card-header>
+        <ion-card *ngFor="let hotel of hotels">
+          <ng-container *ngIf="hotel.isActive">
+            <img src="{{hotel.image}}" />
+            <ion-card-header>
 
               <ion-row>
                 <ion-col size="8">
-                  <div class="location"><ion-card-title>FiveStars Room</ion-card-title></div>
+                  <div class="location"><ion-card-title>{{hotel.name}}</ion-card-title></div>
                 </ion-col>
                 <ion-col size="4">
-                  <div class="price">$500/Night</div>
+                  <div class="price">{{hotel.pricePerNight}}/Night</div>
                 </ion-col>
               </ion-row>
 
-          </ion-card-header>
+            </ion-card-header>
 
             <ion-card-content>
-              A perfect room, if you want to stay close to the beach and have a great vacation.
+              {{hotel.description}}
                 <br>
               <ion-row>
                 <ion-col>
-                  <div><ion-icon name="people-outline"></ion-icon> 4 Persons</div>
+                  <div><ion-icon name="people-outline"></ion-icon> {{hotel.capacity}} Persons</div>
                 </ion-col>
               </ion-row>
 
               <ion-col>
-                <ion-button expand="block" routerLink="/rooms-details">View</ion-button>
+                <ion-button expand="block" routerLink="/rooms-details/{{hotel.id}}">View</ion-button>
               </ion-col>
 
             </ion-card-content>
+          </ng-container>
+          
+          
         
         </ion-card>
-
-        <!-- Second Room -->
-
-        <ion-card>
-          <img src="https://www.travelplusstyle.com/wp-content/uploads/2016/01/sonevajani-1880.jpg" />
-          <ion-card-header>
-
-              <ion-row>
-                <ion-col size="8">
-                  <div class="location"><ion-card-title>Marriott Room</ion-card-title></div>
-                </ion-col>
-                <ion-col size="4">
-                  <div class="price">$500/Night</div>
-                </ion-col>
-              </ion-row>
-
-          </ion-card-header>
-
-            <ion-card-content>
-              A perfect room, if you want to stay close to the beach and have a great vacation.
-                <br>
-              <ion-row>
-                <ion-col>
-                  <div><ion-icon name="people-outline"></ion-icon> 4 Persons</div>
-                </ion-col>
-              </ion-row>
-
-              <ion-col>
-                <ion-button expand="block" routerLink="/rooms-details">View</ion-button>
-              </ion-col>
-
-            </ion-card-content>
-        
-        </ion-card>
-
 </ion-content>
 

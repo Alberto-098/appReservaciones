@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { HotelService } from '../services/hotel-service.service';
 
 @Component({
   selector: 'app-signup',
@@ -12,7 +13,7 @@ export class SignupPage implements OnInit {
   email: string;
   password: string;
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private hotelService: HotelService) { }
 
   ngOnInit() {
     this.name = '';
@@ -21,12 +22,18 @@ export class SignupPage implements OnInit {
   }
 
   register(){
-    console.log(this.name);
     if( this.name=="" || this.email == "" || this.password == ""){
-      console.log('Elementos requeridos faltan');
       this.presentAlert();
     }else{
-      //register
+      this.hotelService.addUser({
+        id: Date.now() + "",
+        name: this.name,
+        email: this.email,
+        password: this.password,
+        isAdmin: false
+      });
+      alert('Now  you are able to log in');
+      location.href = "/login";  
     }
   }
 

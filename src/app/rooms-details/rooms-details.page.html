@@ -2,7 +2,7 @@
   <ion-toolbar>
 
     <ion-buttons slot="start">
-      <ion-button color="primary" class="backbtn" routerLink="../tabs/tab1" routerDirection="back">
+      <ion-button color="primary" class="backbtn" routerLink="/tabs/tab1" routerDirection="back">
         <img src="../../assets/back-dark.svg" />
       </ion-button>
     </ion-buttons>
@@ -14,15 +14,15 @@
 
   <ion-slides pager="true" class="product-slider">
     <ion-slide>
-      <img src="../../assets/product-slider/prod-slide1.jpg" />
+      <img src="{{hotel.image}}" />
     </ion-slide>
     <ion-slide>
-      <img src="../../assets/product-slider/prod-slide1.jpg" />
+      <img src="{{hotel.image}}" />
     </ion-slide>
   </ion-slides>
 
   <div class="ion-padding-vertical">
-    <h1 class="item-name">Room FiveStars</h1>
+    <h1 class="item-name">{{hotel.name}}</h1>
   </div>
 
   <div class="seperator">
@@ -36,7 +36,7 @@
         <div class="rating">
           <ion-icon name="person-outline"></ion-icon>
         </div>
-        4 persons
+        {{hotel.capacity}} persons
       </ion-col>
       
     </ion-row>
@@ -49,7 +49,7 @@
   <div class="description">
     <h5>Description</h5>
     <p>
-    Opulent, seductive and lush, Casa Gandhi delivers the ultimate in luxury, privacy and romance. This new listing is an architectural masterpiece ocean view estate property nestled in the rain forest.
+      {{hotel.description}}
     </p>
   </div>
 
