@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-buttons class="backbtn" routerLink="/rooms-details" routerDirection="back">
+      <ion-buttons class="backbtn" routerLink="/tabs" routerDirection="back">
         <img src="../../assets/back-dark.svg" />
       </ion-buttons>
     </ion-buttons>
@@ -19,12 +19,12 @@
     <ion-card mode="ios">
       <ion-card-content>
         <div class="item-img">
-          <img src="../../assets/events/Hotel1.jpg" />
+          <img src="{{image}}" />
         </div>
 
         <div class="item-info">
-          <p>Room FiveStars</p>
-          <ion-icon name="person-circle-outline"></ion-icon>4 persons
+          <p>{{hotelName}}</p>
+          <ion-icon name="person-circle-outline"></ion-icon>{{capacity}} persons
 
         </div>
       </ion-card-content>
@@ -39,12 +39,12 @@
 
     <ion-item>
       <ion-label><ion-icon name="calendar-outline"></ion-icon> Dates</ion-label>
-      <ion-label slot="end" class="ion-text-right">01/01 - 01/05 </ion-label>
+      <ion-label slot="end" class="ion-text-right">{{dates}} </ion-label>
     </ion-item>
 
     <ion-item lines="none">
       <ion-label><ion-icon name="moon-outline"></ion-icon> Total Nights</ion-label>
-      <ion-label slot="end" class="ion-text-right">5 Nights</ion-label>
+      <ion-label slot="end" class="ion-text-right">{{nights}} Nights</ion-label>
     </ion-item>
 
   </div>
@@ -54,23 +54,11 @@
   <div class="cart-total">
     <h1>Price Details</h1>
     <ion-item lines="none">
-      <ion-label>$100 x 5 Night</ion-label>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-label>Subtotal</ion-label>
-      <ion-label slot="end" class="ion-text-right">$500</ion-label>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-label>Commission</ion-label>
-      <ion-label slot="end" class="ion-text-right">$150</ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>Tax & Fee</ion-label>
-      <ion-label slot="end" class="ion-text-right">$100</ion-label>
+      <ion-label>${{pricePerNight}} x {{nights}} Nights</ion-label>
     </ion-item>
     <ion-item lines="none">
       <ion-label>Total</ion-label>
-      <ion-label slot="end" class="ion-text-right">$750</ion-label>
+      <ion-label slot="end" class="ion-text-right">${{pricePerNight * nights}}</ion-label>
     </ion-item>
   </div>
 </ion-content>
@@ -80,7 +68,7 @@
 
     <ion-row>
       <ion-col>
-        <ion-button expand="block" class="main-button" routerLink="/confirm" routerDirection="forward">Book</ion-button>
+        <ion-button expand="block" class="main-button" (click)="doReservation()" routerDirection="forward">Book</ion-button>
       </ion-col>
     </ion-row>
 

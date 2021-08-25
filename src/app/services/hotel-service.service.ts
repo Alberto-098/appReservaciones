@@ -22,6 +22,10 @@ export class HotelService {
     this.db.list(`hotels`).push(newRoom);
   }
 
+  addReservation(newReservation){
+    this.db.list(`reservations`).push(newReservation);
+  }
+
   getHotels() {
     return this.db.list('hotels').snapshotChanges();
   }
