@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, take } from 'rxjs/operators';
 import { hotel } from '../models/hotel.model';
 import { HotelService } from '../services/hotel-service.service';
 import { reservation } from '../models/reservation.model';
@@ -90,7 +90,9 @@ export class RoomsDetailsPage implements OnInit {
     let endDate = new Date(this.day2);
     endDate.setDate( endDate.getDate() + 1 );
 
-    await this.hotelService.getReservationsByRoom(this.id).subscribe( (reservations: reservation[])=>{
+    await this.hotelService.getReservationsByRoom(this.id).pipe(
+      take(1)
+    ).subscribe( (reservations: reservation[])=>{
       reservations.forEach( reservation =>{
         //check if the reservation overlap this new reservation
         let isReserved = this.isRoomReserved(reservation.startDate, reservation.endDate, startDate.toISOString(), endDate.toISOString())
