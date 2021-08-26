@@ -16,7 +16,7 @@
     <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }" class="default-left-padding">
 
       <!-- Slide I -->
-
+      <h3 *ngIf="reservations.length == 0">No bookings yet</h3>
       <ion-slide *ngFor="let reservation of reservations">
         <ion-col class="ion-text-left">
           <ion-card>
