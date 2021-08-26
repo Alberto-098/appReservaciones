@@ -3,6 +3,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { mergeMap } from 'rxjs/operators';
 import { hotel } from '../models/hotel.model';
 import { HotelService } from '../services/hotel-service.service';
+import { reservation } from '../models/reservation.model';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -41,6 +43,7 @@ export class RoomsDetailsPage implements OnInit {
   
 
   constructor(private route: ActivatedRoute,
+    public alertController: AlertController,
     private hotelService: HotelService,
     private router: Router) { }
 
@@ -80,23 +83,65 @@ export class RoomsDetailsPage implements OnInit {
     this.days = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   }
 
-  goToCheckout(){
+  async goToCheckout(){
+    let isRoomReserved;
     let startDate = new Date(this.day1);
     startDate.setDate( startDate.getDate() + 1 );
     let endDate = new Date(this.day2);
     endDate.setDate( endDate.getDate() + 1 );
 
-    this.router.navigate(['/checkout',{
-      dates: this.startDateDay + '/' + this.startDateMonth +'-' + this.endDateDay + '/' + this.endDateMonth,
-      startDate: startDate.toISOString(),
-      endDate: endDate.toISOString(),
-      hotelId: this.id,
-      hotelName: this.hotel.name,
-      capacity: this.hotel.capacity,
-      image: this.hotel.image,
-      pricePerNight: this.hotel.pricePerNight,
-      total: this.hotel.pricePerNight * this.days,
-      nights: this.days
-    }])
+    await this.hotelService.getReservationsByRoom(this.id).subscribe( (reservations: reservation[])=>{
+      reservations.forEach( reservation =>{
+        //check if the reservation overlap this new reservation
+        let isReserved = this.isRoomReserved(reservation.startDate, reservation.endDate, startDate.toISOString(), endDate.toISOString())
+        if(isReserved){
+          isRoomReserved = true;
+        }
+      });
+
+      if(isRoomReserved){
+        this.presentAlert();
+      }else{
+        this.router.navigate(['/checkout',{
+          dates: this.startDateDay + '/' + this.startDateMonth +'-' + this.endDateDay + '/' + this.endDateMonth,
+          startDate: startDate.toISOString(),
+          endDate: endDate.toISOString(),
+          hotelId: this.id,
+          hotelName: this.hotel.name,
+          capacity: this.hotel.capacity,
+          image: this.hotel.image,
+          pricePerNight: this.hotel.pricePerNight,
+          total: this.hotel.pricePerNight * this.days,
+          nights: this.days
+        }]);
+      }
+    })
+  }
+
+  isRoomReserved(reservationStart, reservationEnd, newReservartionStart, newReservationEnd){
+    if( reservationStart == newReservartionStart || reservationEnd == newReservationEnd){
+      return true;
+    }else if( reservationStart < newReservartionStart && reservationEnd > newReservationEnd ){
+      return true
+    }else if( reservationStart < newReservartionStart && reservationEnd < newReservationEnd && reservationEnd > newReservartionStart ){
+      return true
+    }else if( reservationStart > newReservartionStart && reservationEnd > newReservationEnd && reservationStart < newReservationEnd ){
+      return true
+    }else if( reservationStart > newReservartionStart && reservationEnd < newReservationEnd && reservationStart != newReservationEnd ){
+      return true
+    }else{
+      return false;
+    }
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Alert',
+      subHeader: 'Room is already reserved for the dates you selected',
+      message: 'Try again with other dates',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }

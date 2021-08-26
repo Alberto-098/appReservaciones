@@ -45,6 +45,10 @@ export class HotelService {
   getReservationsByUser(userid){
     return this.db.list('reservations', ref => ref.orderByChild('userid').equalTo(userid)).valueChanges();
   }
+
+  getReservationsByRoom(roomId){
+    return this.db.list('reservations', ref => ref.orderByChild('hotelid').equalTo(roomId)).valueChanges();
+  }
 }
 
 
